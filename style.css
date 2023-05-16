@@ -1,0 +1,75 @@
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+}
+
+#container {
+    height: 90vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#hamburger {
+    position: fixed;
+    height: 30px;
+    width: 30px;
+    top: 20px;
+    right: 20px;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+#sider {
+    position: fixed;
+    padding: 4rem;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: grey;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+#sider.active {
+    transform: translateX(0);
+}
+
+.button {
+    padding: 10px 15px 10px 15px;
+    margin: 10px 10px 10px 10px;
+    font-size: 50pt;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#oracle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 70%;
+    width: 70%;
+}
+
+.icon {
+    border-radius: 25px;
+    margin: 5px;
+}
+
+.hidden {
+    display: none;
+}
