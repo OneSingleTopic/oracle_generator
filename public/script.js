@@ -21,6 +21,9 @@ const container = document.getElementById("container");
 const oracle_btn = document.getElementById("oracle-button");
 const save_btn = document.getElementById("save-button");
 
+const oracles_div = document.getElementById("oracles");
+const buttons_div = document.getElementById("buttons");
+
 
 function refresh_saved_oracles() {
     sider.innerHTML = "";
@@ -69,8 +72,10 @@ async function display_icon(random_icon_png_addr) {
     const icon_image = document.createElement("IMG");
     icon_image.setAttribute("src", await random_icon_png_addr);
     icon_image.setAttribute("width", "512px");
+    icon_image.setAttribute("height", "512px");
     icon_image.classList.add("icon");
     icon_image.addEventListener("click", e => {
+        e.stopPropagation();
         if (!ICONS_TUPLES) {
             ICONS_TUPLES = fetch_and_flatten_icons_table();
         }
@@ -99,11 +104,8 @@ container.addEventListener("click", e => {
     sider.classList.remove("active");
 })
 
-Array.from(container.children).forEach(child => child.addEventListener("click", e => {
-    e.stopPropagation();
-}));
-
 save_btn.addEventListener("click", e => {
+    e.stopPropagation();
     SAVED_ORACLES.push({
         "title": "oracle_" + SAVED_ORACLES.length,
         "oracle": Array.from(document.getElementById("oracle").children).reduce(
@@ -118,6 +120,7 @@ save_btn.addEventListener("click", e => {
 });
 
 oracle_btn.addEventListener("click", e => {
+    e.stopPropagation();
     document.getElementById("oracle").classList.remove("hidden");
     document.getElementById("save-button").classList.remove("hidden");
 

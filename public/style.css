@@ -1,19 +1,12 @@
 body {
-    height: 100%;
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     align-content: center;
-
 }
 
 #container {
-    height: 90vh;
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -26,15 +19,15 @@ body {
     position: fixed;
     height: 30px;
     width: 30px;
-    top: 20px;
-    right: 20px;
+    top: 2vh;
+    right: 2vw;
     transition: transform 0.3s ease-in-out;
-
 }
 
 #sider {
     position: fixed;
-    padding: 4rem;
+    min-width: 5%;
+    padding: 5%;
     top: 0;
     right: 0;
     height: 100vh;
@@ -47,10 +40,19 @@ body {
     transform: translateX(0);
 }
 
-.button {
-    padding: 10px 15px 10px 15px;
+h1 {
+    font-size: 2rem;
+}
+
+p {
     margin: 10px 10px 10px 10px;
-    font-size: 50pt;
+}
+
+.button {
+    width: 7rem;
+    height: 7rem;
+    text-align: center;
+    font-size: 5rem;
     border: 2px solid black;
     border-radius: 10px;
 }
@@ -68,8 +70,33 @@ body {
 .icon {
     border-radius: 25px;
     margin: 5px;
+    width: 100%;
+    min-width: 230px;
+    max-width: 30vw;
+    height: auto;
+
 }
 
 .hidden {
     display: none;
+}
+
+@media (max-width: 800px) {
+    #oracle {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .button {
+        width: 4rem;
+        height: 4rem;
+        font-size: 3rem;
+    }
+
+    #oracle.icon {
+        flex: 70%;
+    }
 }
